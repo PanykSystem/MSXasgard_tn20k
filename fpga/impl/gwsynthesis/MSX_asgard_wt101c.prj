@@ -71,9 +71,10 @@
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\hdmi\source_product_description_info_frame.sv" type="verilog"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\hdmi\tmds_channel.sv" type="verilog"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\impulse.v" type="verilog"/>
+        <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\is_msx2.v" type="verilog"/>
+        <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\kb_map.v" type="verilog"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\lpf_butter4_8k.v" type="verilog"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\megaram.v" type="verilog"/>
-        <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\is_msx2.v" type="verilog"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\memory.v" type="verilog"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\ocm\kanji.v" type="verilog"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\ocm\rtc.v" type="verilog"/>
@@ -119,9 +120,9 @@
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\G80A\t80_mcode.vhd" type="vhdl"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\G80A\t80_pack.vhd" type="vhdl"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\G80A\t80_reg.vhd" type="vhdl"/>
-        <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\PSG_YM2149\YM2149.vhdl" type="vhdl"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\denoise\denoise.vhd" type="vhdl"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\monostable\monostable.vhd" type="vhdl"/>
+        <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\PSG_YM2149\YM2149.vhdl" type="vhdl"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\gowin_clkdiv2\gowin_clkdiv2.vhd" type="vhdl"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\ocm\fifo.vhd" type="vhdl"/>
         <File path="D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\src\ocm\lpf.vhd" type="vhdl"/>

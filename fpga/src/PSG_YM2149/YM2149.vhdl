@@ -292,11 +292,28 @@ begin
         when x"B" => O_DA <= reg(11);
         when x"C" => O_DA <= reg(12);
         when x"D" => O_DA <= "0000" & reg(13)(3 downto 0);
-        when x"E" => if (reg(7)(6) = '0') then -- input
-                       O_DA <= ioa_inreg;
-                     else
-                       O_DA <= reg(14); -- read output reg
-                     end if;
+        -- MODIFICADO respecto al core original: el puerto A devuelve SIEMPRE las
+        -- entradas, ignorando el bit 6 de r#7.
+        --
+        -- En MSX el puerto A esta cableado a las entradas de los conectores de
+        -- joystick y nunca es una salida legitima. Poner r#7 bit 6 a 1 es un
+        -- error del programa -openMSX lo avisa como "unsafe PSG port directions"
+        -- y en maquinas antiguas puede danar el chip-, pero el hardware real
+        -- sigue devolviendo las lineas del conector al leer r#14.
+        --
+        -- Devolver reg(14) rompia software real. KPI-BALL silencia el PSG con
+        -- r#7 = 0xFF en vez de 0xBF, lo que deja el puerto A como salida; a
+        -- partir de ahi leia reg(14), que nadie escribe nunca y vale 0x00, o sea
+        -- "las cuatro direcciones y el disparo pulsados". El juego funde eso
+        -- sobre la fila 8 del teclado con RES, su detector de flanco no ve nunca
+        -- un cambio y los cursores dejan de responder. Comprobado que en openMSX,
+        -- en un MSX con Z80 y en MSX-Goa'uld el juego funciona: eramos el unico
+        -- caso divergente.
+        --
+        -- El puerto B (r#15) NO se toca: ahi si se devuelve el registro de
+        -- salida, y ese mismo juego depende de ello para su
+        -- lectura-modificacion-escritura de r#15.
+        when x"E" => O_DA <= ioa_inreg;
         when x"F" => if (Reg(7)(7) = '0') then
                        O_DA <= iob_inreg;
                      else
@@ -418,7 +435,7 @@ begin
     end if;
   end process;
 
-  p_envelope_shape       : process(env_reset, CLK, reg)
+  p_envelope_shape       : process(CLK)  -- sincrono (antes env_reset asincrono); ver nota abajo
     variable is_bot    : boolean;
     variable is_bot_p1 : boolean;
     variable is_top_m1 : boolean;
@@ -445,7 +462,18 @@ begin
         -- 1 1 1 0  /\/\
         --
         -- 1 1 1 1  /___
-    if (env_reset = '1') then
+    if rising_edge(CLK) then
+     -- MODIFICADO respecto al core original: env_reset se trata de forma SINCRONA.
+     -- El original cargaba valores que dependen de reg(13)(2) con un reset asincrono,
+     -- o sea una CARGA asincrona de un dato variable. Los biestables del GW2A (como los
+     -- del ECP5) solo tienen set/clear asincronos, y Gowin lo emulaba con logica
+     -- realimentada: avisos AG0100 "logical loop" en env_vol[4:0] y env_inc, caminos
+     -- que el STA no puede analizar. Version tomada de YM2149_alternate.vhdl.
+     -- En este proyecto CLK y clkHigh son la misma red (clk_27m en asgard.v), asi que
+     -- muestrear env_reset en CLK recarga la envolvente un ciclo de 27 MHz mas tarde
+     -- como mucho (37 ns), inaudible. env_gen_cnt no se reinicia con env_reset en
+     -- ninguna de las dos versiones, asi que la fase de los pasos no cambia.
+     if (env_reset = '1') then
       -- load initial state
       if (reg(13)(2) = '0') then -- attack
         env_vol <= "11111";
@@ -456,7 +484,7 @@ begin
       end if;
       env_hold <= '0';
 
-    elsif rising_edge(CLK) then
+     else
       is_bot    := (env_vol = "00000");
       is_bot_p1 := (env_vol = "00001");
       is_top_m1 := (env_vol = "11110");
@@ -508,7 +536,8 @@ begin
           end if;
         end if;
       end if;
-    end if;
+     end if;
+    end if;  -- cierra el `if rising_edge(CLK)` anadido
   end process;
 
   p_chan_mixer           : process(cnt_div, reg, tone_gen_op)

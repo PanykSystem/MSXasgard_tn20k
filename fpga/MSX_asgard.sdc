@@ -17,9 +17,11 @@ create_generated_clock -name clock_VideoDLClk -source [get_nets {asgard1/clk_27m
 // logica que avanza a ritmo de enable y no de flanco.
 create_clock -name clock_reset     -period 277.778 -waveform {0 138.889} [get_nets {asgard1/bus_reset_n}] -add
 create_clock -name clock_audio     -period 277.778 -waveform {0 138.889} [get_nets {asgard1/vdp4/clk_audio}] -add
-create_clock -name clock_env_reset -period 277.778 -waveform {0 138.889} [get_nets {asgard1/psg1/env_reset}] -add
 
-set_clock_groups -asynchronous -group [get_clocks {clock_108m clock_54m clock_VideoDHClk clock_VideoDLClk clock_27m}] -group [get_clocks {clock_reset}] -group [get_clocks {clock_env_reset}] -group [get_clocks {clock_audio}]
+// clock_env_reset se ELIMINO (2026-09-11): el core YM2149 ya no usa env_reset
+// como reset asincrono sino como dato muestreado en clk_27m. Declararle un
+// reloj y meterlo en un grupo asincrono cortaria del analisis justo ese camino.
+set_clock_groups -asynchronous -group [get_clocks {clock_108m clock_54m clock_VideoDHClk clock_VideoDLClk clock_27m}] -group [get_clocks {clock_reset}] -group [get_clocks {clock_audio}]
 
 // ==================== CDC de reset hacia los serializadores =================
 // bus_reset_n cruza al dominio de 135 MHz de los serializadores HDMI sin
@@ -134,6 +136,8 @@ set_false_path -from [get_ports {ex_bus_*}]
 //    saturada al 100%) mientras PRIMARY tiene huecos libres, y la peor ruta del
 //    diseno es de reset. Si vuelve la pantalla negra, atacar el reset antes que
 //    reponer esta cota.
+set_max_delay -to [get_pins {asgard1/mem1/sdram_addr_*/CE}] 17.1
+set_max_delay -to [get_pins {asgard1/mem1/sdram_addr_*/D}] 17.1
 //
 // 4) set_multicycle_path blanket sobre cpu1/?*?/D, /CE y cpu1/u0/*
 //    Relajaba TODO el nucleo Z80 a 2 ciclos, incluidos los CE, cuya red de
@@ -144,6 +148,7 @@ set_false_path -from [get_ports {ex_bus_*}]
 // constraints relajan y que por eso no aparecen en el listado general.
 report_timing -setup -to [get_pins {asgard1/cpu_din_*/D}] -max_paths 12
 report_timing -setup -to [get_pins {asgard1/mem1/sdram_addr_*/D}] -max_paths 16
+report_timing -setup -to [get_pins {asgard1/mem1/sdram_addr_*/CE}] -max_paths 16
 report_timing -setup -from [get_clocks {clock_54m}] -to [get_pins {asgard1/cpu1/?*?/D}] -max_paths 24
 report_timing -setup -to [get_pins {asgard1/cpu1/?*?/CE}] -max_paths 24
 report_timing -hold  -to [get_pins {asgard1/cpu1/?*?/CE}] -max_paths 12

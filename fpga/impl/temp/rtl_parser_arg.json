@@ -270,15 +270,19 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/is_msx2.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/lpf_butter4_8k.v",
    "Type" : "verilog"
   },
   {
    "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/megaram.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/is_msx2.v",
    "Type" : "verilog"
   },
   {
@@ -322,6 +326,10 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/wondertang/mp_debouncer.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/wondertang/pinfilter.v",
    "Type" : "verilog"
   },
@@ -338,7 +346,7 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top.v",
+   "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top_wt101c.v",
    "Type" : "verilog"
   },
   {
@@ -466,17 +474,17 @@
   },
   {
    "Library" : "work",
-   "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/PSG_YM2149/YM2149.vhdl",
-   "Type" : "vhdl"
-  },
-  {
-   "Library" : "work",
    "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/denoise/denoise.vhd",
    "Type" : "vhdl"
   },
   {
    "Library" : "work",
    "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/monostable/monostable.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/PSG_YM2149/YM2149.vhdl",
    "Type" : "vhdl"
   },
   {

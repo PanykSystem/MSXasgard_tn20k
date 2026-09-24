@@ -88,10 +88,14 @@
 	and  #01						; Bit 0: SD card enable
 	ld   (var_sdcard), a
 	ld   a, b
-	and  #06						; Bits1,2: SD card slot
+	and  #0e						; Bits3-1: keyboard layout
 	rrca
-	ld   (var_sdcslt), a
-	ld   a, b						; Bit 3: compatible mode, retirado (siempre 0)
+	cp   KEYMAP_COUNT				; Fuera de rango (config antigua o de fabrica,
+	jr   c, .keymap_ok				; que trae 111) -> Default / Japanese
+	xor  a
+.keymap_ok:
+	ld   (var_keymap), a
+	ld   a, b
 	and  #10						; Bit 4: turbo
 	rrca
 	rrca
@@ -100,6 +104,9 @@
 	ld   (var_turbo), a
 
 	ei
+
+	ld   a, JOY_MASK				; Joystick bloqueado hasta soltarlo: el Trigger
+	ld   (var_joylock), a			; usado para entrar no debe activar una opcion
 
 ; ############## Main loop
 
@@ -134,6 +141,21 @@ ONOFF_Y = ONOFF_Y + 2
 	call print_on_off
 ONOFF_Y = ONOFF_Y + 2
 
+	ld   hl,#2b00 + ONOFF_Y			; Print Keyboard Layout
+	call POSIT						; BIOS setCursor
+	ld   a,(var_keymap)
+	add  a,a
+	ld   e,a
+	ld   d,0
+	ld   hl,keymapStrTable
+	add  hl,de
+	ld   a,(hl)
+	inc  hl
+	ld   h,(hl)
+	ld   l,a
+	call print_string
+ONOFF_Y = ONOFF_Y + 2
+
 ONOFF_Y = 5
 	ld   hl,#3c00 + ONOFF_Y			; Print Mapper Slot
 	call POSIT						; BIOS setCursor
@@ -149,17 +171,14 @@ ONOFF_Y = ONOFF_Y + 2
 	call CHPUT						; BIOS printChar
 ONOFF_Y = ONOFF_Y + 2
 
-	ld   hl,#3c00 + ONOFF_Y			; Print SD Card Slot
-	call POSIT						; BIOS setCursor
-	ld   a,(var_sdcslt)
-	add  a,#30
-	call CHPUT						; BIOS printChar
-ONOFF_Y = ONOFF_Y + 2
 
 	; Wait for a key
 wait_for_a_key:
 	ei
 	halt
+	call read_joystick				; A = codigo de tecla equivalente o 0
+	or   a
+	jr   nz, .key_lateral
 	call CHSNS						; BIOS keyStatus
 	jr   z, wait_for_a_key
 	call CHGET						; BIOS readChar
@@ -288,36 +307,21 @@ selected_megaRamSlot:
 	ld   (var_megslt), a
 	ret
 
-selected_sdCardSlot:
-	ret
-	ld   a, (var_sdcard)				; If disabled then don't modify
-	or   a
-	ret  z
-	ld   a, (var_mapslt)				; Increase slot if not used by Mapper nor MegaRam
-	ld   b, a
-	ld   a, (var_megslt)
-	ld   c, a
-	ld   a, (var_sdcslt)
-.sd_used:
-	inc  a
-.sd_used_no_inc:
-	cp   b
-	jr   z, .sd_used
-	cp   c
-	jr   z, .sd_used
-	cp   4
-	jr   nz, .sd_no4
-	ld   a, #1
-	jr   .sd_used_no_inc
-.sd_no4:
-	ld   (var_sdcslt), a
-	ret
-
 selected_turbo:
 	ld   hl, var_turbo
 	ld   a, (hl)
 	xor  1
 	ld   (hl), a
+	ret
+
+selected_keymap:
+	ld   a, (var_keymap)				; Cicla 0 .. KEYMAP_COUNT-1
+	inc  a
+	cp   KEYMAP_COUNT
+	jr   c, .keymap_store
+	xor  a
+.keymap_store:
+	ld   (var_keymap), a
 	ret
 
 selected_saveReset:
@@ -371,12 +375,11 @@ config_var2byte:
 
 	ld   a, (var_sdcard)			; #42 Bit 0: SD Card enable
 	ld   b, a
-	ld   a, (var_sdcslt)			; #42 Bits2,1: SD Card slot
+	ld   a, (var_keymap)			; #42 Bits3-1: keyboard layout
 	rlca
 	or   b
 	ld   b, a
 
-									; #42 Bit 3: compatible mode, retirado -> queda a 0
 	ld   a, (var_turbo)			; #42 Bit 4: turbo
 	rlca
 	rlca
@@ -400,6 +403,55 @@ set_settings:
 	ld   a, b
 	out  (c),a
 	reti
+
+; Reads joystick 1 and translates it to a navigation key.
+; After a joystick event, that button must be released before any new event.
+; Output   : A  - VT_UP / VT_DOWN / VT_RIGHT / VT_SPACE, or 0 if no new event
+; Modifies : AF, B, E, HL
+read_joystick:
+	di
+	ld   a, 15						; PSG R#15: bit 6 = 0 -> joystick port 1
+	out  (PSG_ADDR), a
+	in   a, (PSG_READ)
+	and  #BF
+	out  (PSG_WRITE), a
+	ld   a, 14						; PSG R#14: joystick state (active low)
+	out  (PSG_ADDR), a
+	in   a, (PSG_READ)
+	ei
+	cpl
+	and  JOY_MASK
+	ld   b, a						; B = pressed buttons (1 = pressed)
+
+	ld   hl, var_joylock
+	ld   a, (hl)
+	and  b							; Locked button still pressed?
+	jr   nz, .joy_none
+	ld   (hl), a					; Released (or no lock): clear lock
+
+	ld   a, b
+	and  JOY_UP
+	ld   e, VT_UP
+	jr   nz, .joy_event
+	ld   a, b
+	and  JOY_DOWN
+	ld   e, VT_DOWN
+	jr   nz, .joy_event
+	ld   a, b
+	and  JOY_LEFT | JOY_RIGHT		; Both go to the lateral (slot) option
+	ld   e, VT_RIGHT
+	jr   nz, .joy_event
+	ld   a, b
+	and  JOY_TRIG
+	ret  z							; Nothing pressed: A = 0
+	ld   e, VT_SPACE
+.joy_event:
+	ld   (hl), a					; Lock the button that caused the event
+	ld   a, e
+	ret
+.joy_none:
+	xor  a
+	ret
 
 ; Prints characters from memory until a 0 is found.
 ; Input    : HL - The text address
@@ -450,7 +502,7 @@ print_selection:
 ; ############## Constants
 
 menuTitleStr:
-	.db "MSX Asgard Settings Menu v1.0",0
+	.db "MSX Asgard Settings Menu v1.1",0
 enableMapperStr:
 	.db "Enable Mapper",0
 enableMegaRamStr:
@@ -461,6 +513,8 @@ enableScanlinesStr:
 	.db "Enable Scanlines",0
 turboStr:
 	.db "Turbo",0
+keymapStr:
+	.db "Keyboard Layout",0
 saveExitStr:
 	.db "Save & Exit",0
 saveResetStr:
@@ -472,6 +526,27 @@ onStr:
 	.db "On ",0
 offStr:
 	.db "Off",0
+
+; Valores de Keyboard Layout, indexados por var_keymap. Todas con la misma
+; longitud: al cambiar de opcion se pisa entera la anterior sin borrar antes.
+KEYMAP_COUNT		equ		7
+keymapStrTable:
+	.dw keymap0Str, keymap1Str, keymap2Str, keymap3Str, keymap4Str
+	.dw keymap5Str, keymap6Str
+keymap0Str:
+	.db "Default / Japanese",0
+keymap1Str:
+	.db "International     ",0
+keymap2Str:
+	.db "Brasilian-G       ",0
+keymap3Str:
+	.db "Brasilian-S       ",0
+keymap4Str:
+	.db "French            ",0
+keymap5Str:
+	.db "VG8000 / VG8010   ",0
+keymap6Str:
+	.db "Spanish           ",0
 
 
 ; ############## Structs
@@ -511,7 +586,7 @@ POS_Y = POS_Y + 2
 struct_EnableSD:
 	.db 21, POS_Y+1
 	.dw enableSDStr
-	.dw struct_EnableMegaRam, struct_EnableScanlines, struct_SDSlot
+	.dw struct_EnableMegaRam, struct_EnableScanlines, struct_EnableSD
 	.dw #0800 + POS_Y*10 + 2
 	.db 4
 	.dw selected_sdCard
@@ -529,16 +604,25 @@ POS_Y = POS_Y + 2
 struct_Turbo:
 	.db 21, POS_Y+1
 	.dw turboStr
-	.dw struct_EnableScanlines, struct_SaveExit, struct_Turbo
+	.dw struct_EnableScanlines, struct_KeyboardLayout, struct_Turbo
 	.dw #0800 + POS_Y*10 + 2
 	.db 4
 	.dw selected_turbo
 POS_Y = POS_Y + 2
 
+struct_KeyboardLayout:
+	.db 21, POS_Y+1
+	.dw keymapStr
+	.dw struct_Turbo, struct_SaveExit, struct_KeyboardLayout
+	.dw #0800 + POS_Y*10 + 2
+	.db 6							; Resalte hasta la columna 63: el valor es mas largo que On/Off
+	.dw selected_keymap
+POS_Y = POS_Y + 2
+
 struct_SaveExit:
 	.db 21, POS_Y+1
 	.dw saveExitStr
-	.dw struct_Turbo, struct_SaveReset, struct_SaveExit
+	.dw struct_KeyboardLayout, struct_SaveReset, struct_SaveExit
 	.dw #0800 + POS_Y*10 + 2
 	.db 4
 	.dw selected_saveExit
@@ -567,19 +651,10 @@ POS_Y = POS_Y + 2
 struct_MegaRamSlot:
 	.db 54, POS_Y+1
 	.dw slotStr
-	.dw struct_MapperSlot, struct_SDSlot, struct_EnableMegaRam
+	.dw struct_MapperSlot, struct_EnableSD, struct_EnableMegaRam
 	.dw #0800 + POS_Y*10 + 6
 	.db 2
 	.dw selected_megaRamSlot
-POS_Y = POS_Y + 2
-
-struct_SDSlot:
-	.db 54, POS_Y+1
-	.dw slotStr
-	.dw struct_MegaRamSlot, struct_EnableScanlines, struct_EnableSD
-	.dw #0800 + POS_Y*10 + 6
-	.db 2
-	.dw selected_sdCardSlot
 POS_Y = POS_Y + 2
 
 structs_end:
@@ -595,9 +670,10 @@ structs_end:
 	var_mapslt: ds 1
 	var_turbo: ds 1
 	var_megslt: ds 1
-	var_sdcslt: ds 1
+	var_keymap: ds 1
 
 	var_currentStruct: ds 2
+	var_joylock: ds 1
 
 
 ; ############## MSX VT-52 Character Codes
@@ -611,3 +687,17 @@ VT_DOWN    equ	#1f		; 27,"B"	; Cursor down
 VT_SPACE   equ	#20		; Space
 VT_CLRSCR  equ	#0c		; 27,"E"	; Clear screen:	Clears the screen and moves the cursor to home
 VT_HOME    equ	#0b		; 27,"H"	; Cursor home:	Move cursor to the upper left corner.
+
+
+; ############## PSG / Joystick
+
+PSG_ADDR   equ	#a0
+PSG_WRITE  equ	#a1
+PSG_READ   equ	#a2
+
+JOY_UP     equ	#01		; PSG R#14 bit 0
+JOY_DOWN   equ	#02		; PSG R#14 bit 1
+JOY_LEFT   equ	#04		; PSG R#14 bit 2
+JOY_RIGHT  equ	#08		; PSG R#14 bit 3
+JOY_TRIG   equ	#10		; PSG R#14 bit 4 (Trigger 1)
+JOY_MASK   equ	JOY_UP | JOY_DOWN | JOY_LEFT | JOY_RIGHT | JOY_TRIG

@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Fri Aug 28 22:04:20 2026
+<td>Sat Sep 19 09:53:58 2026
 </td>
 </tr>
 <tr>
@@ -98,23 +98,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td class="label">Place & Route Process</td>
 <td>Running placement:
    Placement Phase 0: CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s
-   Placement Phase 1: CPU time = 0h 0m 0.884s, Elapsed time = 0h 0m 0.884s
-   Placement Phase 2: CPU time = 0h 0m 17s, Elapsed time = 0h 0m 17s
-   Placement Phase 3: CPU time = 0h 0m 46s, Elapsed time = 0h 0m 46s
+   Placement Phase 1: CPU time = 0h 0m 0.893s, Elapsed time = 0h 0m 0.892s
+   Placement Phase 2: CPU time = 0h 0m 16s, Elapsed time = 0h 0m 16s
+   Placement Phase 3: CPU time = 0h 0m 47s, Elapsed time = 0h 0m 47s
    Total Placement: CPU time = 0h 1m 11s, Elapsed time = 0h 1m 11s
 Running routing:
-   Routing Phase 0: CPU time = 0h 0m 0.009s, Elapsed time = 0h 0m 0.009s
-   Routing Phase 1: CPU time = 0h 0m 0.86s, Elapsed time = 0h 0m 0.86s
-   Routing Phase 2: CPU time = 0h 0m 29s, Elapsed time = 0h 0m 29s
+   Routing Phase 0: CPU time = 0h 0m 0.01s, Elapsed time = 0h 0m 0.01s
+   Routing Phase 1: CPU time = 0h 0m 0.838s, Elapsed time = 0h 0m 0.838s
+   Routing Phase 2: CPU time = 0h 1m 4s, Elapsed time = 0h 1m 4s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 30s, Elapsed time = 0h 0m 30s
+   Total Routing: CPU time = 0h 1m 5s, Elapsed time = 0h 1m 5s
 Generate output files:
    CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 1m 45s, Elapsed time = 0h 1m 45s, Peak memory usage = 607MB</td>
+<td>CPU time = 0h 2m 20s, Elapsed time = 0h 2m 20s, Peak memory usage = 617MB</td>
 </tr>
 </table>
 <br/>
@@ -129,22 +129,22 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>14078/20736</td>
+<td>14056/20736</td>
 <td>68%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>13706(11882 LUT, 1824 ALU, 0 ROM16)</td>
+<td>13702(11968 LUT, 1734 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --SSRAM(RAM16)</td>
-<td>62</td>
+<td>59</td>
 <td>-</td>
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>6758/15915</td>
+<td>6699/15915</td>
 <td>43%</td>
 </tr>
 <tr>
@@ -154,8 +154,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>6724/15552</td>
-<td>44%</td>
+<td>6665/15552</td>
+<td>43%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --I/O Register as Latch</td>
@@ -169,8 +169,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>8847/10368</td>
-<td>86%</td>
+<td>8938/10368</td>
+<td>87%</td>
 </tr>
 <tr>
 <td class="label">I/O Port</td>
@@ -204,12 +204,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">BSRAM</td>
-<td>7 SP<br/>3 SPX9<br/>3 SDPB<br/>1 DPB<br/>3 pROM<br/></td>
-<td>37%</td>
+<td>4 SP<br/>3 SPX9<br/>2 SDPB<br/>1 DPB<br/>5 pROM<br/></td>
+<td>33%</td>
 </tr>
 <tr>
 <td class="label">DSP</td>
-<td>2 MULT18X18<br/>6 MULTALU36X18<br/>2 MULTADDALU18X18<br/></td><td>38%</td>
+<td>1 MULT18X18<br/>6 MULTALU36X18<br/>1 MULTADDALU18X18<br/></td><td>32%</td>
 </tr>
 </table>
 <h2><a name="I/O_Bank_Usage_Summary">I/O Bank Usage Summary:</a></h2>
@@ -316,7 +316,12 @@ Generate output files:
 <tr>
 <td class="label">asgard1/VideoDHClk</td>
 <td>PRIMARY</td>
-<td> TL</td>
+<td> TR TL</td>
+</tr>
+<tr>
+<td class="label">asgard1/main_clk_enable</td>
+<td>LW</td>
+<td> -</td>
 </tr>
 <tr>
 <td class="label">asgard1/bus_reset_n</td>
@@ -324,7 +329,7 @@ Generate output files:
 <td> -</td>
 </tr>
 <tr>
-<td class="label">asgard1/n93_7</td>
+<td class="label">asgard1/ff_flash_addr_23_12</td>
 <td>LW</td>
 <td> -</td>
 </tr>
@@ -350,11 +355,6 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">asgard1/vdp4/clk_audio</td>
-<td>LW</td>
-<td> -</td>
-</tr>
-<tr>
-<td class="label">asgard1/psg1/env_reset</td>
 <td>LW</td>
 <td> -</td>
 </tr>

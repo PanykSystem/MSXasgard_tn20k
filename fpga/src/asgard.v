@@ -241,6 +241,7 @@ end
     assign reset2_n = reset2_n_ff;
     assign reset3_n = reset3_n_ff;
 
+    //bus isolation
     wire [15:0] bus_addr;
     wire bus_m1_n;
     wire bus_mreq_n;
@@ -257,7 +258,6 @@ end
                      ( vdp_int_csr_n == 0) ? vdp_dout :
                      ( mapper_read == 1) ? ram_dout :
                      ( mapper_reg_read == 1 ) ? mapper_reg_dout :
-                     ( sram_req_r == 1 ) ? sram_dout :
                      ( exp_slot0_req_r == 1) ? ~exp_slot0  :
                      ( exp_slotx_req_r == 1) ? ~exp_slotx  :
                      ( bios_req == 1 ) ? ram_dout :
@@ -270,7 +270,7 @@ end
                      //( slot3_req_r == 1) ? 8'hff :
                  `endif
                 `ifdef ENABLE_SOUND
-                     //( scc_req3_r == 1 ) ? scc_dout:
+                     ( scc_req3_r == 1 ) ? scc_dout:
                      ( megaram_req == 1 ) ? ram_dout:
                 `endif
                 `ifdef ENABLE_CONFIG
@@ -294,8 +294,6 @@ end
                   `ifdef ENABLE_SOUND
                      ( psg_req_r == 1 ) ? psg_dout :
                   `endif
-                     ( slot0_req_r == 1 ) ? 8'hff :
-                     ( slotx_req_r == 1 ) ? 8'hff :
                       8'hff;   // sin bus externo: lo no decodificado lee 0xFF
     end
 
@@ -480,6 +478,7 @@ end
     xchg_regs xchg1 (
         .clk        (clk_54m),
         .reset_n    (bus_reset_n),
+        .key_map    (config_keyboard),
         .key_row    (ppi_port_c[3:0]),
         .key_data   (xchg_key_data),
         .joy1       (xchg_joy1),
@@ -584,13 +583,6 @@ end
                            ( exp_slotx_page == 2'b10 ) ? 4'b0100 :
                                                          4'b1000;
 
-    reg slot0_req_r;
-    reg slotx_req_r;
-    always @ (posedge clk_54m) begin
-        slot0_req_r <= ( bus_mreq_n == 0 && bus_rd_n == 0 && pri_slot_num[0] == 1 ) ? 1 : 0;
-        slotx_req_r <= ( ( config_enable_mapper3 == 1 || config_enable_megaram3 == 1 || config_enable_sdcard == 1 ) && bus_mreq_n == 0 && bus_rd_n == 0 && pri_slot_num[SD_SLOT] == 1 ) ? 1 : 0;
-    end
-
     //bios
     reg bios_req;
     //wire [7:0] bios_dout;
@@ -609,25 +601,6 @@ end
     always @ (posedge clk_54m) begin
         kanji_driver_req <= ( bus_mreq_n == 0 && bus_rd_n == 0 && (page_num[1] == 1 || page_num[2] == 1) && pri_slot_num[0] == 1 && exp_slot0_num[1] == 1 ) ? 1 : 0;
     end
-
-    //ram
-    reg sram_req_r;
-    reg sram_req_w;
-    wire sram_req;
-    wire [7:0] sram_dout;
-    always @ (posedge clk_54m) begin
-        sram_req_r <= ( config_enable_mapper12 == 0 && config_enable_mapper3 == 0 && bus_mreq_n == 0 && bus_rd_n == 0 && pri_slot_num[SD_SLOT] == 1 && bus_addr[15] == 1 && exp_slotx_num[0] == 1 && xffff == 0 ) ? 1 : 0;
-        sram_req_w <= ( config_enable_mapper12 == 0 && config_enable_mapper3 == 0 && bus_mreq_n == 0 && bus_wr_n == 0 && pri_slot_num[SD_SLOT] == 1 && bus_addr[15] == 1 && exp_slotx_num[0] == 1 && xffff == 0 ) ? 1 : 0;
-    end
-    assign sram_req = sram_req_r | sram_req_w;
-
-    ram8k ram1 (
-        .clk (clk_54m),
-        .we (sram_req_w),
-        .addr (bus_addr[12:0]),
-        .din (cpu_dout),
-        .dout (sram_dout)
-    );
 
     //bios_missing
     reg bios_missing_req;
@@ -1027,8 +1000,26 @@ memory_ctrl mem1 (
     // El proxy siempre lo baja al muestrear, asi que sin esto el MSX2+ veria el
     // mando responder incluso con su pin 8 alto, que es la anomalia que detectan
     // las rutinas de identificacion de dispositivo tipo HID test.
-    assign psgPA = (psg_port_b[6] == 0) ? (psg_port_b[4] ? 8'hff : xchg_joy1)
-                                        : (psg_port_b[5] ? 8'hff : xchg_joy2);
+    //
+    // Ese "nada pulsado" alcanza SOLO a b0-b5, los contactos del mando. Los bits
+    // 6 y 7 de r#14 no tienen nada que ver con el pin 8 y se dejan pasar siempre:
+    //   b6  distribucion de teclado (JIS/ANSI). La BIOS del MSX2+ LA LEE, y como
+    //       el teclado fisico es el del anfitrion, su valor es el que vale.
+    //   b7  entrada de cassette del anfitrion.
+    // Antes se forzaba el byte entero a 0xff y b6 salia siempre a 1: consultar la
+    // distribucion no requiere bajar el pin 8, asi que el valor real del
+    // anfitrion no llegaba nunca.
+    //
+    // No hay carrera con el arranque: host_ready solo se libera cuando el proxy
+    // ha escrito su firma, y eso lo hace al final de una pasada completa, asi que
+    // cuando la CPU sale de reset ya hay una lectura valida de r#14. Si el
+    // anfitrion no responde y entra el timeout de escape, joy1/joy2 valen 0xff
+    // por su valor de reset y b6 queda a 1.
+    wire [7:0] joy_sel;
+    wire       joy_pin8_hi;
+    assign joy_sel     = (psg_port_b[6] == 0) ? xchg_joy1    : xchg_joy2;
+    assign joy_pin8_hi = (psg_port_b[6] == 0) ? psg_port_b[4] : psg_port_b[5];
+    assign psgPA = (joy_pin8_hi == 1) ? { joy_sel[7:6], 6'b111111 } : joy_sel;
     assign psgPB = 8'hff;   // entrada del puerto B: en MSX se usa como salida, aqui en reposo
 
     wire [7:0] psg_dout;
@@ -1079,29 +1070,29 @@ memory_ctrl mem1 (
     // OPLL (YM2413). Comparacion jt2413 (jtopl) vs IKAOPLL (ciclo-exacto): activa una
     // instancia y comenta la otra. Ambas exponen la misma interfaz y alimentan jt2413_wav
     // (signed 16b), asi que la mezcla de audio de abajo no cambia.
-//    jt2413 opll(
-//        .rst (~bus_reset_n),        // rst should be at least 6 clk&cen cycles long
-//        .clk (clk_27m),        // CPU clock
-//        .cen (clk_enable_3m6_27),        // optional clock enable, if not needed leave as 1'b1
-//        .din (cpu_dout),
-//        .addr (bus_addr[0]),
-//        .cs_n (opll_req_n),
-//        .wr_n (1'b0),
-//        .snd (jt2413_wav),
-//        .sample   ( )
-//    );
-
-    opll_ikaopll opll(
-        .rst (~bus_reset_n),
-        .clk (clk_27m),
-        .cen (clk_enable_3m6_27),
+    jt2413 opll(
+        .rst (~bus_reset_n),        // rst should be at least 6 clk&cen cycles long
+        .clk (clk_27m),        // CPU clock
+        .cen (clk_enable_3m6_27),        // optional clock enable, if not needed leave as 1'b1
         .din (cpu_dout),
         .addr (bus_addr[0]),
         .cs_n (opll_req_n),
         .wr_n (1'b0),
         .snd (jt2413_wav),
-        .sample ( )
+        .sample   ( )
     );
+
+//    opll_ikaopll opll(
+//        .rst (~bus_reset_n),
+//        .clk (clk_27m),
+//        .cen (clk_enable_3m6_27),
+//        .din (cpu_dout),
+//        .addr (bus_addr[0]),
+//        .cs_n (opll_req_n),
+//        .wr_n (1'b0),
+//        .snd (jt2413_wav),
+//        .sample ( )
+//    );
 
     //scc & ghost scc
     wire [14:0] scc_wav;
@@ -1299,7 +1290,7 @@ memory_ctrl mem1 (
 `endif
 
     localparam CONFIG1_DEFAULT = 8'hfb;
-    localparam CONFIG2_DEFAULT = 8'h0f;
+    localparam CONFIG2_DEFAULT = 8'h03;
 
 `ifdef ENABLE_CONFIG
     //config
@@ -1310,15 +1301,14 @@ memory_ctrl mem1 (
     reg [7:0] config2_temp_ff;
     reg [1:0] config_mapper_slot_ff = 2'b11;
     reg [1:0] config_megaram_slot_ff = 2'b11;
-    reg [1:0] config_sdcard_slot_ff = 2'b11;
     reg config_enable_mapper3;
     reg config_enable_mapper12;
     wire config_enable_megaram;
     wire config_enable_megaram3;
     wire config_enable_megaram12;
     wire config_enable_ghost_scc;
+    wire [2:0] config_keyboard;
     reg config_enable_sdcard;
-    wire config_enable_wait;
     reg config_enable_turbo;
     reg config_reset_ff;
     reg config_flash_write_ff;
@@ -1327,7 +1317,6 @@ memory_ctrl mem1 (
     wire config_enable_scanlines;
     wire [1:0] config_mapper_slot;
     wire [1:0] config_megaram_slot;
-    wire [1:0] config_sdcard_slot;
     wire config0_req;
     wire config1_req;
     wire config2_req;
@@ -1411,8 +1400,7 @@ memory_ctrl mem1 (
     assign config1_req = (config_ok == 1 && bus_addr[7:0] == 8'h41 && bus_iorq_n == 0 && bus_m1_n == 1 && bus_wr_n == 0)? 1:0;
     assign config2_req = (config_ok == 1 && bus_addr[7:0] == 8'h42 && bus_iorq_n == 0 && bus_m1_n == 1 && bus_wr_n == 0)? 1:0;
     assign config_enable_scanlines = config1_ff[3];
-    //assign config_keyboard = config2_ff[4:3];
-    assign config_enable_wait = config2_ff[3];
+    assign config_keyboard = config2_ff[3:1];
     assign config_req = (bus_addr[7:4] == 4'h4 && bus_iorq_n == 0 && bus_m1_n == 1 && bus_rd_n == 0)? 1:0;
     assign config_dout = ( bus_addr[3:0] == 4'h0 ) ? config0_ff :
                          ( bus_addr[3:0] == 4'h1 ) ? config1_ff :
@@ -1422,17 +1410,15 @@ memory_ctrl mem1 (
     always @ (posedge clk_54m) begin
         if (bus_reset_n == 0 || config_init_delay == 1 ) begin
             config_mapper_slot_ff <= config1_ff[5:4];
-            config_enable_mapper3 <= (config1_ff[0] == 1 && config1_ff[5:4] == 2'b11);
-            config_enable_mapper12 <= (config1_ff[0] == 1 && config1_ff[5:4] != 2'b11);
+            config_enable_mapper3 <= (config1_ff[5:4] == 2'b11);
+            config_enable_mapper12 <= (config1_ff[5:4] != 2'b11);
             //config_megaram_slot_ff <= config1_ff[7:6];
             config_enable_sdcard <= config2_ff[0];
-            config_sdcard_slot_ff <= config2_ff[2:1];
             config_enable_turbo <= config2_ff[4];
         end
     end
     assign config_mapper_slot = config_mapper_slot_ff;
     assign config_megaram_slot = config1_ff[7:6];
-    assign config_sdcard_slot = config_sdcard_slot_ff;
     assign config_enable_megaram = config1_ff[1];
     assign config_enable_megaram3 = (config1_ff[1] == 1 && config1_ff[7:6] == 2'b11);
     assign config_enable_megaram12 = (config1_ff[1] == 1 && config1_ff[7:6] != 2'b11 );
@@ -1450,9 +1436,8 @@ memory_ctrl mem1 (
     wire config_enable_scanlines;
     wire [1:0] config_mapper_slot;
     wire [1:0] config_megaram_slot;
-    wire [1:0] config_sdcard_slot;
+    wire [2:0] config_keyboard;
     wire config_reset;
-    wire config_enable_wait;
     assign config_enable_mapper3 = 1;
     assign config_enable_mapper12 = 0;
     assign config_enable_megaram = 1;
@@ -1463,10 +1448,9 @@ memory_ctrl mem1 (
     assign config_enable_scanlines = 1;
     assign config_mapper_slot = 2'b11;
     assign config_megaram_slot = 2'b11;
-    assign config_sdcard_slot= 2'b11;
     assign config_reset = 0;
-    assign config_enable_wait = 0;
     assign config_enable_turbo = 0;
+    assign config_keyboard = 0;
 
 `endif
 

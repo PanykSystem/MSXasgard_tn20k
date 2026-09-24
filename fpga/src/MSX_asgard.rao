@@ -2,82 +2,47 @@
 <GAO_CONFIG>
     <Version>3.0</Version>
     <Mode>Standard</Mode>
-    <AoCore index="0" sample_clock="clk_54m" trig_type="0" storage_depth="512" window_num="1" capture_amount="512" implementation="0" trigger_pos="50" module_name="top" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
+    <AoCore index="0" sample_clock="clk_54m" trig_type="0" storage_depth="256" window_num="1" capture_amount="256" implementation="0" trigger_pos="50" module_name="top" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
         <SignalList>
             <Signal capture_enable="true">clk_27m</Signal>
             <Signal capture_enable="true">ex_bus_clk_3m6</Signal>
             <Signal capture_enable="true">asgard1/bus_clk_3m6</Signal>
             <Signal capture_enable="true">asgard1/clk_enable_3m6_54</Signal>
             <Signal capture_enable="true">asgard1/clk_falling_3m6_54</Signal>
-            <Signal capture_enable="true">asgard1/cpu_clk_enable</Signal>
-            <Signal capture_enable="true">asgard1/cpu_clk_falling</Signal>
-            <Bus capture_enable="true" name="ex_bus_data[7:0]">
-                <Signal>ex_bus_data[7]</Signal>
-                <Signal>ex_bus_data[6]</Signal>
-                <Signal>ex_bus_data[5]</Signal>
-                <Signal>ex_bus_data[4]</Signal>
-                <Signal>ex_bus_data[3]</Signal>
-                <Signal>ex_bus_data[2]</Signal>
-                <Signal>ex_bus_data[1]</Signal>
-                <Signal>ex_bus_data[0]</Signal>
-            </Bus>
-            <Bus capture_enable="true" name="cpu_din[7:0]">
-                <Signal>asgard1/cpu_din[7]</Signal>
-                <Signal>asgard1/cpu_din[6]</Signal>
-                <Signal>asgard1/cpu_din[5]</Signal>
-                <Signal>asgard1/cpu_din[4]</Signal>
-                <Signal>asgard1/cpu_din[3]</Signal>
-                <Signal>asgard1/cpu_din[2]</Signal>
-                <Signal>asgard1/cpu_din[1]</Signal>
-                <Signal>asgard1/cpu_din[0]</Signal>
-            </Bus>
             <Signal capture_enable="true">asgard1/cpu_wait_n</Signal>
-            <Signal capture_enable="true">asgard1/bus_int_n</Signal>
             <Signal capture_enable="true">asgard1/reset_n</Signal>
-            <Signal capture_enable="true">asgard1/ex_bus_m1_n</Signal>
-            <Signal capture_enable="true">asgard1/ex_bus_rfsh_n</Signal>
             <Signal capture_enable="true">asgard1/bus_mreq_n</Signal>
             <Signal capture_enable="true">asgard1/bus_iorq_n</Signal>
             <Signal capture_enable="true">asgard1/bus_rd_n</Signal>
             <Signal capture_enable="true">asgard1/bus_wr_n</Signal>
-            <Bus capture_enable="true" name="asgard1/bus_addr[15:0]">
-                <Signal>asgard1/bus_addr[15]</Signal>
-                <Signal>asgard1/bus_addr[14]</Signal>
-                <Signal>asgard1/bus_addr[13]</Signal>
-                <Signal>asgard1/bus_addr[12]</Signal>
-                <Signal>asgard1/bus_addr[11]</Signal>
-                <Signal>asgard1/bus_addr[10]</Signal>
-                <Signal>asgard1/bus_addr[9]</Signal>
-                <Signal>asgard1/bus_addr[8]</Signal>
-                <Signal>asgard1/bus_addr[7]</Signal>
-                <Signal>asgard1/bus_addr[6]</Signal>
-                <Signal>asgard1/bus_addr[5]</Signal>
-                <Signal>asgard1/bus_addr[4]</Signal>
-                <Signal>asgard1/bus_addr[3]</Signal>
-                <Signal>asgard1/bus_addr[2]</Signal>
-                <Signal>asgard1/bus_addr[1]</Signal>
-                <Signal>asgard1/bus_addr[0]</Signal>
-            </Bus>
-            <Signal capture_enable="true">bus_data_reverse</Signal>
-            <Bus capture_enable="true" name="cpu_dout[7:0]">
-                <Signal>cpu_dout[7]</Signal>
-                <Signal>cpu_dout[6]</Signal>
-                <Signal>cpu_dout[5]</Signal>
-                <Signal>cpu_dout[4]</Signal>
-                <Signal>cpu_dout[3]</Signal>
-                <Signal>cpu_dout[2]</Signal>
-                <Signal>cpu_dout[1]</Signal>
-                <Signal>cpu_dout[0]</Signal>
-            </Bus>
-            <Signal capture_enable="true">asgard1/update_addr</Signal>
             <Signal capture_enable="true">asgard1/ram_busy</Signal>
-            <Signal capture_enable="true">asgard1/wait_io</Signal>
             <Signal capture_enable="true">asgard1/m1_wait_n</Signal>
+            <Signal capture_enable="true">asgard1/xchg1/keys[0][6]</Signal>
+            <Bus capture_enable="true" name="asgard1/xchg1/keys_jis[0][7:0]">
+                <Signal>asgard1/xchg1/keys_jis[0][7]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[0][6]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[0][5]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[0][4]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[0][3]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[0][2]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[0][1]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[0][0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="asgard1/xchg1/keys_jis[3][7:0]">
+                <Signal>asgard1/xchg1/keys_jis[3][7]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[3][6]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[3][5]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[3][4]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[3][3]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[3][2]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[3][1]</Signal>
+                <Signal>asgard1/xchg1/keys_jis[3][0]</Signal>
+            </Bus>
         </SignalList>
         <Triggers>
             <Trigger index="0">
                 <SignalList>
-                    <Signal>ex_bus_m1_n</Signal>
+                    <Signal>asgard1/m1_n_d</Signal>
                 </SignalList>
             </Trigger>
             <Trigger index="1">
@@ -180,5 +145,5 @@
             <Expression>M0</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>1110110010111110</GAO_ID>
+    <GAO_ID>0010001010101011</GAO_ID>
 </GAO_CONFIG>

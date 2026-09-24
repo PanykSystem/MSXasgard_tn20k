@@ -284,8 +284,8 @@ msg_table:
 	.db 23
 	.db "VIDEO AND SOUND IN HDMI"
 	.dw #01F0				; fila 12, columna 16
-	.db 7
-	.db "FW 0.52"
+	.db 6
+	.db "FW 0.6"
 	.dw #0000				; fin
 
 ; Fuente 8x8, glifos de 5 px en los bits 7..3 (TEXT1 usa celdas de 6 px, bits

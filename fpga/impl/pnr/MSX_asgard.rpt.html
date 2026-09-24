@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Fri Aug 28 22:13:12 2026
+<td>Fri Sep 18 15:44:42 2026
 </td>
 </tr>
 <tr>
@@ -98,23 +98,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td class="label">Place & Route Process</td>
 <td>Running placement:
    Placement Phase 0: CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s
-   Placement Phase 1: CPU time = 0h 0m 0.876s, Elapsed time = 0h 0m 0.877s
+   Placement Phase 1: CPU time = 0h 0m 0.937s, Elapsed time = 0h 0m 0.937s
    Placement Phase 2: CPU time = 0h 0m 17s, Elapsed time = 0h 0m 17s
-   Placement Phase 3: CPU time = 0h 0m 45s, Elapsed time = 0h 0m 45s
-   Total Placement: CPU time = 0h 1m 10s, Elapsed time = 0h 1m 10s
+   Placement Phase 3: CPU time = 0h 0m 55s, Elapsed time = 0h 0m 55s
+   Total Placement: CPU time = 0h 1m 20s, Elapsed time = 0h 1m 20s
 Running routing:
    Routing Phase 0: CPU time = 0h 0m 0.009s, Elapsed time = 0h 0m 0.009s
-   Routing Phase 1: CPU time = 0h 0m 0.851s, Elapsed time = 0h 0m 0.851s
-   Routing Phase 2: CPU time = 0h 1m 8s, Elapsed time = 0h 1m 8s
+   Routing Phase 1: CPU time = 0h 0m 0.949s, Elapsed time = 0h 0m 0.949s
+   Routing Phase 2: CPU time = 0h 1m 41s, Elapsed time = 0h 1m 41s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 1m 9s, Elapsed time = 0h 1m 9s
+   Total Routing: CPU time = 0h 1m 42s, Elapsed time = 0h 1m 42s
 Generate output files:
    CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 2m 23s, Elapsed time = 0h 2m 23s, Peak memory usage = 610MB</td>
+<td>CPU time = 0h 3m 7s, Elapsed time = 0h 3m 7s, Peak memory usage = 662MB</td>
 </tr>
 </table>
 <br/>
@@ -129,22 +129,22 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>14566/20736</td>
+<td>14709/20736</td>
 <td>71%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>14194(12393 LUT, 1801 ALU, 0 ROM16)</td>
+<td>14355(12644 LUT, 1711 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --SSRAM(RAM16)</td>
-<td>62</td>
+<td>59</td>
 <td>-</td>
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>6663/15915</td>
+<td>6604/15915</td>
 <td>42%</td>
 </tr>
 <tr>
@@ -154,7 +154,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>6611/15552</td>
+<td>6552/15552</td>
 <td>43%</td>
 </tr>
 <tr>
@@ -169,7 +169,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>8961/10368</td>
+<td>9010/10368</td>
 <td>87%</td>
 </tr>
 <tr>
@@ -204,12 +204,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">BSRAM</td>
-<td>7 SP<br/>3 SPX9<br/>3 SDPB<br/>1 DPB<br/>2 pROM<br/></td>
-<td>35%</td>
+<td>4 SP<br/>3 SPX9<br/>2 SDPB<br/>1 DPB<br/>4 pROM<br/></td>
+<td>31%</td>
 </tr>
 <tr>
 <td class="label">DSP</td>
-<td>2 MULT18X18<br/>6 MULTALU36X18<br/>2 MULTADDALU18X18<br/></td><td>38%</td>
+<td>1 MULT18X18<br/>6 MULTALU36X18<br/>1 MULTADDALU18X18<br/></td><td>32%</td>
 </tr>
 </table>
 <h2><a name="I/O_Bank_Usage_Summary">I/O Bank Usage Summary:</a></h2>
@@ -301,7 +301,7 @@ Generate output files:
 <tr>
 <td class="label">O_sdram_clk_d</td>
 <td>PRIMARY</td>
-<td> TR TL BL</td>
+<td> TR TL</td>
 </tr>
 <tr>
 <td class="label">clk_54m</td>
@@ -316,7 +316,7 @@ Generate output files:
 <tr>
 <td class="label">asgard1/VideoDHClk</td>
 <td>PRIMARY</td>
-<td> TR BL</td>
+<td> TR TL</td>
 </tr>
 <tr>
 <td class="label">bus_reset_n</td>
@@ -324,7 +324,7 @@ Generate output files:
 <td> -</td>
 </tr>
 <tr>
-<td class="label">asgard1/n93_7</td>
+<td class="label">asgard1/main_clk_enable</td>
 <td>LW</td>
 <td> -</td>
 </tr>
@@ -335,6 +335,11 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">asgard1/cpu1/Reset_s</td>
+<td>LW</td>
+<td> -</td>
+</tr>
+<tr>
+<td class="label">asgard1/cpu1/u0/IStatus_0_14</td>
 <td>LW</td>
 <td> -</td>
 </tr>
@@ -350,11 +355,6 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">asgard1/vdp4/clk_audio</td>
-<td>LW</td>
-<td> -</td>
-</tr>
-<tr>
-<td class="label">asgard1/psg1/env_reset</td>
 <td>LW</td>
 <td> -</td>
 </tr>

@@ -1,337 +1,299 @@
 [
  {
-  "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
-  "InstLine" : 22,
-  "InstName" : "jt2413",
-  "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
-  "ModuleLine" : 22,
-  "ModuleName" : "jt2413",
+  "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/opll_ikaopll.v",
+  "InstLine" : 24,
+  "InstName" : "opll_ikaopll",
+  "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/opll_ikaopll.v",
+  "ModuleLine" : 24,
+  "ModuleName" : "opll_ikaopll",
   "SubInsts" : [
    {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
-    "InstLine" : 79,
-    "InstName" : "u_mmr",
-    "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_mmr.v",
-    "ModuleLine" : 21,
-    "ModuleName" : "jtopll_mmr",
+    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/opll_ikaopll.v",
+    "InstLine" : 51,
+    "InstName" : "u_ikaopll",
+    "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "IKAOPLL",
     "SubInsts" : [
      {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_mmr.v",
-      "InstLine" : 63,
-      "InstName" : "u_div",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_div.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_div"
+      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
+      "InstLine" : 134,
+      "InstName" : "u_TIMINGGEN",
+      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_timinggen.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "IKAOPLL_timinggen"
      },
      {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_mmr.v",
-      "InstLine" : 164,
-      "InstName" : "u_reg",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_reg.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopll_reg",
-      "SubInsts" : [
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_reg.v",
-        "InstLine" : 95,
-        "InstName" : "u_slot_cnt",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_slot_cnt.v",
-        "ModuleLine" : 22,
-        "ModuleName" : "jtopl_slot_cnt"
-       },
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_reg.v",
-        "InstLine" : 158,
-        "InstName" : "u_iv",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
-        "ModuleLine" : 22,
-        "ModuleName" : "jtopl_sh_rst"
-       },
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_reg.v",
-        "InstLine" : 173,
-        "InstName" : "u_reg_ch",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_reg_ch.v",
-        "ModuleLine" : 22,
-        "ModuleName" : "jtopll_reg_ch"
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
-    "InstLine" : 119,
-    "InstName" : "u_lfo",
-    "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_lfo.v",
-    "ModuleLine" : 27,
-    "ModuleName" : "jtopl_lfo"
-   },
-   {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
-    "InstLine" : 128,
-    "InstName" : "u_pg",
-    "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg.v",
-    "ModuleLine" : 22,
-    "ModuleName" : "jtopl_pg",
-    "SubInsts" : [
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg.v",
-      "InstLine" : 77,
-      "InstName" : "u_noise",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_noise.v",
-      "ModuleLine" : 27,
-      "ModuleName" : "jtopl_noise"
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg.v",
-      "InstLine" : 84,
-      "InstName" : "u_comb",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_comb.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_pg_comb",
-      "SubInsts" : [
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_comb.v",
-        "InstLine" : 57,
-        "InstName" : "u_pm",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pm.v",
-        "ModuleLine" : 23,
-        "ModuleName" : "jtopl_pm"
-       },
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_comb.v",
-        "InstLine" : 65,
-        "InstName" : "u_inc",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_inc.v",
-        "ModuleLine" : 22,
-        "ModuleName" : "jtopl_pg_inc"
-       },
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_comb.v",
-        "InstLine" : 74,
-        "InstName" : "u_sum",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_sum.v",
-        "ModuleLine" : 26,
-        "ModuleName" : "jtopl_pg_sum"
-       },
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_comb.v",
-        "InstLine" : 83,
-        "InstName" : "u_rhy",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_rhy.v",
-        "ModuleLine" : 22,
-        "ModuleName" : "jtopl_pg_rhy"
-       }
-      ]
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg.v",
-      "InstLine" : 112,
-      "InstName" : "u_phsh",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh_rst"
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg.v",
-      "InstLine" : 120,
-      "InstName" : "u_pad",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh_rst"
-     }
-    ]
-   },
-   {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
-    "InstLine" : 150,
-    "InstName" : "u_eg",
-    "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
-    "ModuleLine" : 22,
-    "ModuleName" : "jtopl_eg",
-    "SubInsts" : [
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
-      "InstLine" : 55,
-      "InstName" : "u_egcnt",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_cnt.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_eg_cnt"
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
-      "InstLine" : 87,
-      "InstName" : "u_comb",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_comb.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_eg_comb",
-      "SubInsts" : [
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_comb.v",
-        "InstLine" : 72,
-        "InstName" : "u_ctrl",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_ctrl.v",
-        "ModuleLine" : 22,
-        "ModuleName" : "jtopl_eg_ctrl"
-       },
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_comb.v",
-        "InstLine" : 91,
-        "InstName" : "u_step",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_step.v",
-        "ModuleLine" : 22,
-        "ModuleName" : "jtopl_eg_step"
-       },
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_comb.v",
-        "InstLine" : 107,
-        "InstName" : "u_pure",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_pure.v",
-        "ModuleLine" : 22,
-        "ModuleName" : "jtopl_eg_pure"
-       },
-       {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_comb.v",
-        "InstLine" : 118,
-        "InstName" : "u_final",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_final.v",
-        "ModuleLine" : 22,
-        "ModuleName" : "jtopl_eg_final"
-       }
-      ]
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
-      "InstLine" : 157,
-      "InstName" : "u_cntsh",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh"
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
-      "InstLine" : 164,
-      "InstName" : "u_fnumsh",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh"
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
+      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
       "InstLine" : 171,
-      "InstName" : "u_blocksh",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh"
+      "InstName" : "u_REG",
+      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "IKAOPLL_reg",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "InstLine" : 71,
+        "InstName" : "u_sync_addrreg",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "ModuleLine" : 467,
+        "ModuleName" : "IKAOPLL_rw_synchronizer"
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "InstLine" : 75,
+        "InstName" : "u_sync_datareg",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "ModuleLine" : 467,
+        "ModuleName" : "IKAOPLL_rw_synchronizer"
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "InstLine" : 250,
+        "InstName" : "u_fnum_lsbs",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "ModuleLine" : 525,
+        "ModuleName" : "IKAOPLL_d9reg",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+          "InstLine" : 538,
+          "InstName" : "u_d9reg",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+          "ModuleLine" : 31,
+          "ModuleName" : "IKAOPLL_sr"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "InstLine" : 253,
+        "InstName" : "u_fnum_msb",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "ModuleLine" : 525,
+        "ModuleName" : "IKAOPLL_d9reg",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+          "InstLine" : 538,
+          "InstName" : "u_d9reg",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+          "ModuleLine" : 31,
+          "ModuleName" : "IKAOPLL_sr"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "InstLine" : 256,
+        "InstName" : "u_block",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "ModuleLine" : 525,
+        "ModuleName" : "IKAOPLL_d9reg",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+          "InstLine" : 538,
+          "InstName" : "u_d9reg",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+          "ModuleLine" : 31,
+          "ModuleName" : "IKAOPLL_sr"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "InstLine" : 259,
+        "InstName" : "u_kon",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "ModuleLine" : 525,
+        "ModuleName" : "IKAOPLL_d9reg",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+          "InstLine" : 538,
+          "InstName" : "u_d9reg",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+          "ModuleLine" : 31,
+          "ModuleName" : "IKAOPLL_sr"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "InstLine" : 262,
+        "InstName" : "u_susen",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "ModuleLine" : 525,
+        "ModuleName" : "IKAOPLL_d9reg",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+          "InstLine" : 538,
+          "InstName" : "u_d9reg",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+          "ModuleLine" : 31,
+          "ModuleName" : "IKAOPLL_sr"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "InstLine" : 265,
+        "InstName" : "u_vol",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "ModuleLine" : 525,
+        "ModuleName" : "IKAOPLL_d9reg",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+          "InstLine" : 538,
+          "InstName" : "u_d9reg",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+          "ModuleLine" : 31,
+          "ModuleName" : "IKAOPLL_sr"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "InstLine" : 268,
+        "InstName" : "u_inst",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "ModuleLine" : 525,
+        "ModuleName" : "IKAOPLL_d9reg",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+          "InstLine" : 538,
+          "InstName" : "u_d9reg",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+          "ModuleLine" : 31,
+          "ModuleName" : "IKAOPLL_sr"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "InstLine" : 301,
+        "InstName" : "u_instrom",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
+        "ModuleLine" : 554,
+        "ModuleName" : "IKAOPLL_instrom"
+       }
+      ]
      },
      {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
-      "InstLine" : 178,
-      "InstName" : "u_egsh",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh_rst"
+      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
+      "InstLine" : 234,
+      "InstName" : "u_LFO",
+      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_lfo.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "IKAOPLL_lfo"
      },
      {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
-      "InstLine" : 186,
-      "InstName" : "u_egstate",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh_rst"
+      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
+      "InstLine" : 259,
+      "InstName" : "u_PG",
+      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_pg.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "IKAOPLL_pg",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_pg.v",
+        "InstLine" : 269,
+        "InstName" : "u_cyc4r_cyc18r_phase_sr",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+        "ModuleLine" : 31,
+        "ModuleName" : "IKAOPLL_sr"
+       }
+      ]
      },
      {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
-      "InstLine" : 194,
-      "InstName" : "u_konsh",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh_rst"
-     }
-    ]
-   },
-   {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
-    "InstLine" : 178,
-    "InstName" : "u_op",
-    "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
-    "ModuleLine" : 26,
-    "ModuleName" : "jtopl_op",
-    "SubInsts" : [
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
-      "InstLine" : 70,
-      "InstName" : "u_delay",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh"
+      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
+      "InstLine" : 290,
+      "InstName" : "u_EG",
+      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_eg.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "IKAOPLL_eg",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_eg.v",
+        "InstLine" : 122,
+        "InstName" : "u_cyc2r_cyc19r_envstatreg",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+        "ModuleLine" : 31,
+        "ModuleName" : "IKAOPLL_sr"
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_eg.v",
+        "InstLine" : 296,
+        "InstName" : "u_cyc3r_cyc19r_attnlvreg",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+        "ModuleLine" : 31,
+        "ModuleName" : "IKAOPLL_sr"
+       }
+      ]
      },
      {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
-      "InstLine" : 77,
-      "InstName" : "u_condly",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh"
+      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
+      "InstLine" : 332,
+      "InstName" : "u_OP",
+      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "IKAOPLL_op",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
+        "InstLine" : 65,
+        "InstName" : "u_cyc19c_logsinrom",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
+        "ModuleLine" : 277,
+        "ModuleName" : "IKAOPLL_logsinrom"
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
+        "InstLine" : 110,
+        "InstName" : "u_cyc20c_exprom",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
+        "ModuleLine" : 325,
+        "ModuleName" : "IKAOPLL_exprom"
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
+        "InstLine" : 194,
+        "InstName" : "u_op_z_reg",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+        "ModuleLine" : 31,
+        "ModuleName" : "IKAOPLL_sr"
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
+        "InstLine" : 199,
+        "InstName" : "u_op_zz_reg",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+        "ModuleLine" : 31,
+        "ModuleName" : "IKAOPLL_sr"
+       }
+      ]
      },
      {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
-      "InstLine" : 95,
-      "InstName" : "u_csr0",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh"
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
-      "InstLine" : 102,
-      "InstName" : "u_csr1",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh"
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
-      "InstLine" : 109,
-      "InstName" : "u_csr2",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
-      "ModuleLine" : 22,
-      "ModuleName" : "jtopl_sh"
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
-      "InstLine" : 168,
-      "InstName" : "u_logsin",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_logsin.v",
-      "ModuleLine" : 26,
-      "ModuleName" : "jtopl_logsin"
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
-      "InstLine" : 190,
-      "InstName" : "u_exprom",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_exprom.v",
-      "ModuleLine" : 33,
-      "ModuleName" : "jtopl_exprom"
-     }
-    ]
-   },
-   {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
-    "InstLine" : 199,
-    "InstName" : "u_acc",
-    "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_acc.v",
-    "ModuleLine" : 23,
-    "ModuleName" : "jtopl_acc",
-    "SubInsts" : [
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_acc.v",
-      "InstLine" : 48,
-      "InstName" : "u_acc",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_single_acc.v",
-      "ModuleLine" : 26,
-      "ModuleName" : "jtopl_single_acc"
+      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
+      "InstLine" : 357,
+      "InstName" : "u_DAC",
+      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_dac.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "IKAOPLL_dac",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_dac.v",
+        "InstLine" : 80,
+        "InstName" : "u_percussion_sr",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
+        "ModuleLine" : 31,
+        "ModuleName" : "IKAOPLL_sr"
+       }
+      ]
      }
     ]
    }
@@ -748,48 +710,64 @@
   "ModuleName" : "impulse"
  },
  {
-  "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top.v",
+  "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/ram8k.v",
+  "InstLine" : 1,
+  "InstName" : "ram8k",
+  "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/ram8k.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "ram8k"
+ },
+ {
+  "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/wondertang/pinfilter.v",
+  "InstLine" : 1,
+  "InstName" : "PINFILTER",
+  "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/wondertang/pinfilter.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "PINFILTER"
+ },
+ {
+  "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top_wt101c.v",
   "InstLine" : 3,
   "InstName" : "top",
-  "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top.v",
+  "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top_wt101c.v",
   "ModuleLine" : 3,
   "ModuleName" : "top",
   "SubInsts" : [
    {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top.v",
-    "InstLine" : 75,
+    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top_wt101c.v",
+    "InstLine" : 69,
     "InstName" : "clk_main",
     "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/gowin/clk_108p.v",
     "ModuleLine" : 10,
     "ModuleName" : "CLK_108P"
    },
    {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top.v",
-    "InstLine" : 84,
+    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top_wt101c.v",
+    "InstLine" : 78,
     "InstName" : "div2",
     "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/gowin_clkdiv2/gowin_clkdiv2.vhd",
     "ModuleLine" : 13,
     "ModuleName" : "Gowin_CLKDIV2"
    },
    {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top.v",
-    "InstLine" : 91,
+    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top_wt101c.v",
+    "InstLine" : 85,
     "InstName" : "div4",
     "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/gowin_clkdiv/gowin_clkdiv.v",
     "ModuleLine" : 10,
     "ModuleName" : "Gowin_CLKDIV"
    },
    {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top.v",
-    "InstLine" : 98,
-    "InstName" : "dn3",
-    "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/wondertang/pinfilter.v",
+    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top_wt101c.v",
+    "InstLine" : 102,
+    "InstName" : "mp_deb",
+    "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/wondertang/mp_debouncer.v",
     "ModuleLine" : 1,
-    "ModuleName" : "PINFILTER"
+    "ModuleName" : "mp_debouncer"
    },
    {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top.v",
-    "InstLine" : 126,
+    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top_wt101c.v",
+    "InstLine" : 153,
     "InstName" : "slave1",
     "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/slave_bus.v",
     "ModuleLine" : 26,
@@ -806,8 +784,8 @@
     ]
    },
    {
-    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top.v",
-    "InstLine" : 157,
+    "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/top_wt101c.v",
+    "InstLine" : 185,
     "InstName" : "asgard1",
     "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
     "ModuleLine" : 10,
@@ -823,7 +801,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 364,
+      "InstLine" : 362,
       "InstName" : "cpu1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/G80A/g80a.vhd",
       "ModuleLine" : 69,
@@ -867,23 +845,95 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 480,
+      "InstLine" : 478,
       "InstName" : "xchg1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/xchg_regs.v",
       "ModuleLine" : 30,
-      "ModuleName" : "xchg_regs"
+      "ModuleName" : "xchg_regs",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/xchg_regs.v",
+        "InstLine" : 102,
+        "InstName" : "kb1",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+        "ModuleLine" : 27,
+        "ModuleName" : "kb_map",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "InstLine" : 50,
+          "InstName" : "u_map_intl",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "ModuleLine" : 119,
+          "ModuleName" : "kb_map_intl"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "InstLine" : 56,
+          "InstName" : "u_map_br",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "ModuleLine" : 345,
+          "ModuleName" : "kb_map_br"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "InstLine" : 61,
+          "InstName" : "u_map_sharp",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "ModuleLine" : 589,
+          "ModuleName" : "kb_map_sharp"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "InstLine" : 66,
+          "InstName" : "u_map_fr",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "ModuleLine" : 841,
+          "ModuleName" : "kb_map_fr"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "InstLine" : 71,
+          "InstName" : "u_map_vg",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "ModuleLine" : 1095,
+          "ModuleName" : "kb_map_vg",
+          "SubInsts" : [
+           {
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+            "InstLine" : 1117,
+            "InstName" : "u_map_intl",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+            "ModuleLine" : 119,
+            "ModuleName" : "kb_map_intl"
+           }
+          ]
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "InstLine" : 77,
+          "InstName" : "u_map_es",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+          "ModuleLine" : 1159,
+          "ModuleName" : "kb_map_es",
+          "SubInsts" : [
+           {
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+            "InstLine" : 1181,
+            "InstName" : "u_map_intl",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/kb_map.v",
+            "ModuleLine" : 119,
+            "ModuleName" : "kb_map_intl"
+           }
+          ]
+         }
+        ]
+       }
+      ]
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 624,
-      "InstName" : "ram1",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/ram8k.v",
-      "ModuleLine" : 1,
-      "ModuleName" : "ram8k"
-     },
-     {
-      "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 638,
+      "InstLine" : 611,
       "InstName" : "bm1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/bios_missing.v",
       "ModuleLine" : 14,
@@ -891,7 +941,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 692,
+      "InstLine" : 665,
       "InstName" : "rtc1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/ocm/rtc.v",
       "ModuleLine" : 53,
@@ -909,7 +959,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 731,
+      "InstLine" : 704,
       "InstName" : "is_msx2_1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/is_msx2.v",
       "ModuleLine" : 38,
@@ -917,7 +967,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 761,
+      "InstLine" : 734,
       "InstName" : "vdp4",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/vdp/vdp_top.v",
       "ModuleLine" : 3,
@@ -1373,7 +1423,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 962,
+      "InstLine" : 935,
       "InstName" : "mem1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/memory.v",
       "ModuleLine" : 2,
@@ -1381,307 +1431,345 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1047,
+      "InstLine" : 1038,
       "InstName" : "psg1",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/PSG_YM2149/YM2149.vhdl",
+      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/PSG_YM2149/YM2149.vhdl",
       "ModuleLine" : 62,
       "ModuleName" : "YM2149"
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1094,
+      "InstLine" : 1073,
       "InstName" : "opll",
-      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/opll_ikaopll.v",
-      "ModuleLine" : 24,
-      "ModuleName" : "opll_ikaopll",
+      "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
+      "ModuleLine" : 22,
+      "ModuleName" : "jt2413",
       "SubInsts" : [
        {
-        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/opll_ikaopll.v",
-        "InstLine" : 51,
-        "InstName" : "u_ikaopll",
-        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
-        "ModuleLine" : 1,
-        "ModuleName" : "IKAOPLL",
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
+        "InstLine" : 79,
+        "InstName" : "u_mmr",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_mmr.v",
+        "ModuleLine" : 21,
+        "ModuleName" : "jtopll_mmr",
         "SubInsts" : [
          {
-          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
-          "InstLine" : 134,
-          "InstName" : "u_TIMINGGEN",
-          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_timinggen.v",
-          "ModuleLine" : 1,
-          "ModuleName" : "IKAOPLL_timinggen"
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_mmr.v",
+          "InstLine" : 63,
+          "InstName" : "u_div",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_div.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_div"
          },
          {
-          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
-          "InstLine" : 171,
-          "InstName" : "u_REG",
-          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-          "ModuleLine" : 1,
-          "ModuleName" : "IKAOPLL_reg",
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_mmr.v",
+          "InstLine" : 164,
+          "InstName" : "u_reg",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_reg.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopll_reg",
           "SubInsts" : [
            {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "InstLine" : 71,
-            "InstName" : "u_sync_addrreg",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "ModuleLine" : 467,
-            "ModuleName" : "IKAOPLL_rw_synchronizer"
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_reg.v",
+            "InstLine" : 95,
+            "InstName" : "u_slot_cnt",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_slot_cnt.v",
+            "ModuleLine" : 22,
+            "ModuleName" : "jtopl_slot_cnt"
            },
            {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "InstLine" : 75,
-            "InstName" : "u_sync_datareg",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "ModuleLine" : 467,
-            "ModuleName" : "IKAOPLL_rw_synchronizer"
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_reg.v",
+            "InstLine" : 158,
+            "InstName" : "u_iv",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
+            "ModuleLine" : 22,
+            "ModuleName" : "jtopl_sh_rst"
            },
            {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "InstLine" : 250,
-            "InstName" : "u_fnum_lsbs",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "ModuleLine" : 525,
-            "ModuleName" : "IKAOPLL_d9reg",
-            "SubInsts" : [
-             {
-              "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-              "InstLine" : 538,
-              "InstName" : "u_d9reg",
-              "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-              "ModuleLine" : 31,
-              "ModuleName" : "IKAOPLL_sr"
-             }
-            ]
-           },
-           {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "InstLine" : 253,
-            "InstName" : "u_fnum_msb",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "ModuleLine" : 525,
-            "ModuleName" : "IKAOPLL_d9reg",
-            "SubInsts" : [
-             {
-              "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-              "InstLine" : 538,
-              "InstName" : "u_d9reg",
-              "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-              "ModuleLine" : 31,
-              "ModuleName" : "IKAOPLL_sr"
-             }
-            ]
-           },
-           {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "InstLine" : 256,
-            "InstName" : "u_block",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "ModuleLine" : 525,
-            "ModuleName" : "IKAOPLL_d9reg",
-            "SubInsts" : [
-             {
-              "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-              "InstLine" : 538,
-              "InstName" : "u_d9reg",
-              "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-              "ModuleLine" : 31,
-              "ModuleName" : "IKAOPLL_sr"
-             }
-            ]
-           },
-           {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "InstLine" : 259,
-            "InstName" : "u_kon",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "ModuleLine" : 525,
-            "ModuleName" : "IKAOPLL_d9reg",
-            "SubInsts" : [
-             {
-              "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-              "InstLine" : 538,
-              "InstName" : "u_d9reg",
-              "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-              "ModuleLine" : 31,
-              "ModuleName" : "IKAOPLL_sr"
-             }
-            ]
-           },
-           {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "InstLine" : 262,
-            "InstName" : "u_susen",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "ModuleLine" : 525,
-            "ModuleName" : "IKAOPLL_d9reg",
-            "SubInsts" : [
-             {
-              "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-              "InstLine" : 538,
-              "InstName" : "u_d9reg",
-              "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-              "ModuleLine" : 31,
-              "ModuleName" : "IKAOPLL_sr"
-             }
-            ]
-           },
-           {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "InstLine" : 265,
-            "InstName" : "u_vol",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "ModuleLine" : 525,
-            "ModuleName" : "IKAOPLL_d9reg",
-            "SubInsts" : [
-             {
-              "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-              "InstLine" : 538,
-              "InstName" : "u_d9reg",
-              "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-              "ModuleLine" : 31,
-              "ModuleName" : "IKAOPLL_sr"
-             }
-            ]
-           },
-           {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "InstLine" : 268,
-            "InstName" : "u_inst",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "ModuleLine" : 525,
-            "ModuleName" : "IKAOPLL_d9reg",
-            "SubInsts" : [
-             {
-              "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-              "InstLine" : 538,
-              "InstName" : "u_d9reg",
-              "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-              "ModuleLine" : 31,
-              "ModuleName" : "IKAOPLL_sr"
-             }
-            ]
-           },
-           {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "InstLine" : 301,
-            "InstName" : "u_instrom",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_reg.v",
-            "ModuleLine" : 554,
-            "ModuleName" : "IKAOPLL_instrom"
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_reg.v",
+            "InstLine" : 173,
+            "InstName" : "u_reg_ch",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopll_reg_ch.v",
+            "ModuleLine" : 22,
+            "ModuleName" : "jtopll_reg_ch"
            }
           ]
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
+        "InstLine" : 119,
+        "InstName" : "u_lfo",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_lfo.v",
+        "ModuleLine" : 27,
+        "ModuleName" : "jtopl_lfo"
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
+        "InstLine" : 128,
+        "InstName" : "u_pg",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg.v",
+        "ModuleLine" : 22,
+        "ModuleName" : "jtopl_pg",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg.v",
+          "InstLine" : 77,
+          "InstName" : "u_noise",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_noise.v",
+          "ModuleLine" : 27,
+          "ModuleName" : "jtopl_noise"
          },
          {
-          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
-          "InstLine" : 234,
-          "InstName" : "u_LFO",
-          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_lfo.v",
-          "ModuleLine" : 1,
-          "ModuleName" : "IKAOPLL_lfo"
-         },
-         {
-          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
-          "InstLine" : 259,
-          "InstName" : "u_PG",
-          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_pg.v",
-          "ModuleLine" : 1,
-          "ModuleName" : "IKAOPLL_pg",
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg.v",
+          "InstLine" : 84,
+          "InstName" : "u_comb",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_comb.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_pg_comb",
           "SubInsts" : [
            {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_pg.v",
-            "InstLine" : 269,
-            "InstName" : "u_cyc4r_cyc18r_phase_sr",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-            "ModuleLine" : 31,
-            "ModuleName" : "IKAOPLL_sr"
-           }
-          ]
-         },
-         {
-          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
-          "InstLine" : 290,
-          "InstName" : "u_EG",
-          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_eg.v",
-          "ModuleLine" : 1,
-          "ModuleName" : "IKAOPLL_eg",
-          "SubInsts" : [
-           {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_eg.v",
-            "InstLine" : 122,
-            "InstName" : "u_cyc2r_cyc19r_envstatreg",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-            "ModuleLine" : 31,
-            "ModuleName" : "IKAOPLL_sr"
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_comb.v",
+            "InstLine" : 57,
+            "InstName" : "u_pm",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pm.v",
+            "ModuleLine" : 23,
+            "ModuleName" : "jtopl_pm"
            },
            {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_eg.v",
-            "InstLine" : 296,
-            "InstName" : "u_cyc3r_cyc19r_attnlvreg",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-            "ModuleLine" : 31,
-            "ModuleName" : "IKAOPLL_sr"
-           }
-          ]
-         },
-         {
-          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
-          "InstLine" : 332,
-          "InstName" : "u_OP",
-          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
-          "ModuleLine" : 1,
-          "ModuleName" : "IKAOPLL_op",
-          "SubInsts" : [
-           {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_comb.v",
             "InstLine" : 65,
-            "InstName" : "u_cyc19c_logsinrom",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
-            "ModuleLine" : 277,
-            "ModuleName" : "IKAOPLL_logsinrom"
+            "InstName" : "u_inc",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_inc.v",
+            "ModuleLine" : 22,
+            "ModuleName" : "jtopl_pg_inc"
            },
            {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
-            "InstLine" : 110,
-            "InstName" : "u_cyc20c_exprom",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
-            "ModuleLine" : 325,
-            "ModuleName" : "IKAOPLL_exprom"
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_comb.v",
+            "InstLine" : 74,
+            "InstName" : "u_sum",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_sum.v",
+            "ModuleLine" : 26,
+            "ModuleName" : "jtopl_pg_sum"
            },
            {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
-            "InstLine" : 194,
-            "InstName" : "u_op_z_reg",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-            "ModuleLine" : 31,
-            "ModuleName" : "IKAOPLL_sr"
-           },
-           {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_op.v",
-            "InstLine" : 199,
-            "InstName" : "u_op_zz_reg",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-            "ModuleLine" : 31,
-            "ModuleName" : "IKAOPLL_sr"
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_comb.v",
+            "InstLine" : 83,
+            "InstName" : "u_rhy",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg_rhy.v",
+            "ModuleLine" : 22,
+            "ModuleName" : "jtopl_pg_rhy"
            }
           ]
          },
          {
-          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL.v",
-          "InstLine" : 357,
-          "InstName" : "u_DAC",
-          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_dac.v",
-          "ModuleLine" : 1,
-          "ModuleName" : "IKAOPLL_dac",
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg.v",
+          "InstLine" : 112,
+          "InstName" : "u_phsh",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh_rst"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_pg.v",
+          "InstLine" : 120,
+          "InstName" : "u_pad",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh_rst"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
+        "InstLine" : 150,
+        "InstName" : "u_eg",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
+        "ModuleLine" : 22,
+        "ModuleName" : "jtopl_eg",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
+          "InstLine" : 55,
+          "InstName" : "u_egcnt",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_cnt.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_eg_cnt"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
+          "InstLine" : 87,
+          "InstName" : "u_comb",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_comb.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_eg_comb",
           "SubInsts" : [
            {
-            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_dac.v",
-            "InstLine" : 80,
-            "InstName" : "u_percussion_sr",
-            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/ikaopll/IKAOPLL_primitives.v",
-            "ModuleLine" : 31,
-            "ModuleName" : "IKAOPLL_sr"
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_comb.v",
+            "InstLine" : 72,
+            "InstName" : "u_ctrl",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_ctrl.v",
+            "ModuleLine" : 22,
+            "ModuleName" : "jtopl_eg_ctrl"
+           },
+           {
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_comb.v",
+            "InstLine" : 91,
+            "InstName" : "u_step",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_step.v",
+            "ModuleLine" : 22,
+            "ModuleName" : "jtopl_eg_step"
+           },
+           {
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_comb.v",
+            "InstLine" : 107,
+            "InstName" : "u_pure",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_pure.v",
+            "ModuleLine" : 22,
+            "ModuleName" : "jtopl_eg_pure"
+           },
+           {
+            "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_comb.v",
+            "InstLine" : 118,
+            "InstName" : "u_final",
+            "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg_final.v",
+            "ModuleLine" : 22,
+            "ModuleName" : "jtopl_eg_final"
            }
           ]
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
+          "InstLine" : 157,
+          "InstName" : "u_cntsh",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
+          "InstLine" : 164,
+          "InstName" : "u_fnumsh",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
+          "InstLine" : 171,
+          "InstName" : "u_blocksh",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
+          "InstLine" : 178,
+          "InstName" : "u_egsh",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh_rst"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
+          "InstLine" : 186,
+          "InstName" : "u_egstate",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh_rst"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_eg.v",
+          "InstLine" : 194,
+          "InstName" : "u_konsh",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh_rst.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh_rst"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
+        "InstLine" : 178,
+        "InstName" : "u_op",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
+        "ModuleLine" : 26,
+        "ModuleName" : "jtopl_op",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
+          "InstLine" : 70,
+          "InstName" : "u_delay",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
+          "InstLine" : 77,
+          "InstName" : "u_condly",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
+          "InstLine" : 95,
+          "InstName" : "u_csr0",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
+          "InstLine" : 102,
+          "InstName" : "u_csr1",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
+          "InstLine" : 109,
+          "InstName" : "u_csr2",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_sh.v",
+          "ModuleLine" : 22,
+          "ModuleName" : "jtopl_sh"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
+          "InstLine" : 168,
+          "InstName" : "u_logsin",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_logsin.v",
+          "ModuleLine" : 26,
+          "ModuleName" : "jtopl_logsin"
+         },
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_op.v",
+          "InstLine" : 190,
+          "InstName" : "u_exprom",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_exprom.v",
+          "ModuleLine" : 33,
+          "ModuleName" : "jtopl_exprom"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jt2413.v",
+        "InstLine" : 199,
+        "InstName" : "u_acc",
+        "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_acc.v",
+        "ModuleLine" : 23,
+        "ModuleName" : "jtopl_acc",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_acc.v",
+          "InstLine" : 48,
+          "InstName" : "u_acc",
+          "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/jtopl/jtopl_single_acc.v",
+          "ModuleLine" : 26,
+          "ModuleName" : "jtopl_single_acc"
          }
         ]
        }
@@ -1689,7 +1777,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1152,
+      "InstLine" : 1143,
       "InstName" : "SccCh",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/ocm/scc_wave2.vhd",
       "ModuleLine" : 79,
@@ -1715,7 +1803,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1186,
+      "InstLine" : 1177,
       "InstName" : "megaram1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/megaram.v",
       "ModuleLine" : 1,
@@ -1723,7 +1811,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1232,
+      "InstLine" : 1223,
       "InstName" : "filter2",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/lpf_butter4_8k.v",
       "ModuleLine" : 1,
@@ -1749,7 +1837,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1268,
+      "InstLine" : 1259,
       "InstName" : "kanji1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/ocm/kanji.v",
       "ModuleLine" : 43,
@@ -1757,7 +1845,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1402,
+      "InstLine" : 1391,
       "InstName" : "mono",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/monostable/monostable.vhd",
       "ModuleLine" : 7,
@@ -1765,7 +1853,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1516,
+      "InstLine" : 1500,
       "InstName" : "flash1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/flash_rw.v",
       "ModuleLine" : 1,
@@ -1773,7 +1861,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1768,
+      "InstLine" : 1752,
       "InstName" : "dpram1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/wondertang/dpram.v",
       "ModuleLine" : 1,
@@ -1781,7 +1869,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1787,
+      "InstLine" : 1771,
       "InstName" : "sd1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/wondertang/sd_reader.sv",
       "ModuleLine" : 11,
@@ -1807,7 +1895,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1920,
+      "InstLine" : 1904,
       "InstName" : "ocm_ports",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/ocm/swioports.vhd",
       "ModuleLine" : 38,
@@ -1815,7 +1903,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1941,
+      "InstLine" : 1925,
       "InstName" : "mono2",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/monostable/monostable.vhd",
       "ModuleLine" : 7,
@@ -1823,7 +1911,7 @@
      },
      {
       "InstFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/src/asgard.v",
-      "InstLine" : 1962,
+      "InstLine" : 1946,
       "InstName" : "debug1",
       "ModuleFile" : "D:/datos/proyectos/43_Tang_Nano_20k/149_MSXasgard_tn20k/msx_debug/timing_debug.v",
       "ModuleLine" : 2,

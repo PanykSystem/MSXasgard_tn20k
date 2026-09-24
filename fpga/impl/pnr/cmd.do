@@ -1,9 +1,9 @@
--d D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\impl\gwsynthesis\MSX_asgard.vg
+-d D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\impl\gwsynthesis\MSX_asgard_wt101c.vg
 -p GW2AR-18C-QFN88-8
 -pn GW2AR-LV18QN88C8/I7
--cst D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\msx_asgard.cst
+-cst D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\msx_asgard_wt101c.cst
 -cfg D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\impl\pnr\device.cfg
--sdc D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\MSX_asgard.sdc
+-sdc D:\datos\proyectos\43_Tang_Nano_20k\149_MSXasgard_tn20k\MSX_asgard_wt101c.sdc
 -bit
 -tr
 -ph

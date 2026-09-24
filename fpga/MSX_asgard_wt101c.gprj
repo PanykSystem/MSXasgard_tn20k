@@ -72,9 +72,10 @@
         <File path="src/hdmi/source_product_description_info_frame.sv" type="file.verilog" enable="1"/>
         <File path="src/hdmi/tmds_channel.sv" type="file.verilog" enable="1"/>
         <File path="src/impulse.v" type="file.verilog" enable="1"/>
+        <File path="src/is_msx2.v" type="file.verilog" enable="1"/>
+        <File path="src/kb_map.v" type="file.verilog" enable="1"/>
         <File path="src/lpf_butter4_8k.v" type="file.verilog" enable="1"/>
         <File path="src/megaram.v" type="file.verilog" enable="1"/>
-        <File path="src/is_msx2.v" type="file.verilog" enable="1"/>
         <File path="src/memory.v" type="file.verilog" enable="1"/>
         <File path="src/ocm/kanji.v" type="file.verilog" enable="1"/>
         <File path="src/ocm/rtc.v" type="file.verilog" enable="1"/>
@@ -120,9 +121,9 @@
         <File path="G80A/t80_mcode.vhd" type="file.vhdl" enable="1"/>
         <File path="G80A/t80_pack.vhd" type="file.vhdl" enable="1"/>
         <File path="G80A/t80_reg.vhd" type="file.vhdl" enable="1"/>
-        <File path="PSG_YM2149/YM2149.vhdl" type="file.vhdl" enable="1"/>
         <File path="denoise/denoise.vhd" type="file.vhdl" enable="1"/>
         <File path="monostable/monostable.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/PSG_YM2149/YM2149.vhdl" type="file.vhdl" enable="1"/>
         <File path="src/gowin_clkdiv2/gowin_clkdiv2.vhd" type="file.vhdl" enable="1"/>
         <File path="src/ocm/fifo.vhd" type="file.vhdl" enable="1"/>
         <File path="src/ocm/lpf.vhd" type="file.vhdl" enable="1"/>

@@ -36,7 +36,7 @@ Megaram is detected automatically by sofarun using default settings. When using 
 
 
 ## Configuration
-Config menu is showed pressing 'g' during MSX logo. Menu is created by [nataliapc](https://github.com/nataliapc)
+Config menu is showed pressing 'g' or joystick Left + Trigger during MSX logo. Menu is created by [nataliapc](https://github.com/nataliapc)
 
 ![Config](/pics/config_asgard.png)
 
@@ -46,6 +46,7 @@ Config menu is showed pressing 'g' during MSX logo. Menu is created by [nataliap
 * Megaram Slot: 3 by default. Change to 1 or 2 to get megaram in a not expanded slot
 * Enable Scanlines: On by default. Disable to get a clean hdmi picture
 * Turbo: Off by default. Enable to use an internal high-speed clock
+* Keyboard Layout: select keys distribution for common symbols ( ! " $ % & / * ? ...)
 * Save & Exit: store new config and continue, changes in mapper settings will be effective after pressing reset
 * Save & Reset: store new config and make software reset, changes will be immediate
 
@@ -65,6 +66,3 @@ Programming is done in two steps:
 ![Flash2a](/pics/flashing2a.png)
 ![Flash2b](/pics/flashing2b.png)
 
-> [!WARNING]
-> Work in progress, use at your own risk
->

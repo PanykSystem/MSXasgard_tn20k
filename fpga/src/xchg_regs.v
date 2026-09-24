@@ -29,11 +29,26 @@
 // ===========================================================================
 module xchg_regs #(
     parameter [7:0]  HOST_SIG     = 8'h5a,        // firma que escribe el proxy
-    parameter [26:0] HOST_TIMEOUT = 27'd108000000 // 2 s a 54 MHz
+    // Plazo de escape: solo cubre el caso de que NO haya proxy al otro lado -el
+    // anfitrion apagado o retenido en reset-. NO es una carrera contra su
+    // arranque, y por eso es holgado.
+    //
+    // Estuvo en 2 s y era demasiado corto: una BIOS MSX2 o MSX2+ dibuja su logo
+    // antes de inicializar los cartuchos, asi que el proxy no llegaba a escribir
+    // su firma a tiempo. Vencia el plazo, el MSX2+ arrancaba con joy1/joy2 aun en
+    // su valor de reset 0xff, y su BIOS leia el bit 6 de r#14 -distribucion de
+    // teclado- como 1: teclado JIS en una maquina 50on. El valor correcto llegaba
+    // unas decimas despues, cuando la BIOS ya lo habia leido.
+    //
+    // El contador se dejo en 30 bits -techo ~19.9 s- para que este parametro se
+    // pueda ajustar solo, sin volver a tocarlo. Con los 27 bits originales el
+    // techo eran 2.48 s y no habia forma de subir el plazo sin ensancharlo.
+    parameter [29:0] HOST_TIMEOUT = 30'd216000000 // 4 s a 54 MHz
 )(
     // --- lado MSX2+ (clk_54m) ---
     input  wire        clk,
     input  wire        reset_n,
+    input  wire [2:0]  key_map,
     input  wire [3:0]  key_row,      // seleccion de fila del PPI interno
     output reg  [7:0]  key_data,     // fila seleccionada
     output wire [7:0]  joy1,
@@ -52,6 +67,7 @@ module xchg_regs #(
 );
 
     reg [7:0] keys [0:15];
+    wire [7:0] keys_jis [0:15];
     reg [7:0] joy1_r;
     reg [7:0] joy2_r;
     reg [7:0] beat_r;
@@ -83,9 +99,16 @@ module xchg_regs #(
         end
     end
 
+    kb_map kb1 (
+        .keys (keys),
+        .kana (led_kana),
+        .map (key_map),
+        .keys_jis (keys_jis)
+    );
+
     // --- lectura desde el MSX2+ ---------------------------------------------
     always @ (posedge clk) begin
-        key_data <= keys[key_row];
+        key_data <= keys_jis[key_row];
     end
 
     assign joy1      = joy1_r;
@@ -104,12 +127,12 @@ module xchg_regs #(
     // El temporizador de escape cuenta en clk_54m, NO en el reloj del anfitrion:
     // si el anfitrion esta apagado o retenido en reset su reloj puede no estar
     // oscilando, que es justo el caso que el timeout tiene que cubrir.
-    reg [26:0] tmo_cnt;
+    reg [29:0] tmo_cnt;
     reg        host_ready_r;
 
     always @ (posedge clk) begin
         if (reset_n == 0) begin
-            tmo_cnt      <= 27'd0;
+            tmo_cnt      <= 30'd0;
             host_ready_r <= 1'b0;
         end
         else if (host_ready_r == 0) begin
